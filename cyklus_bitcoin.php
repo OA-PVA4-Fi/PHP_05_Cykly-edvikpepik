@@ -77,6 +77,20 @@ $bitcoinPrices = [
 
 // reseni:
 
+totalBtc = 0;
+$totalInvestment = 0;
+
+foreach ($bitcoinPrices as $month => $price) {
+    $btcPurchased = 50 / $price;
+    $totalBtc += $btcPurchased;
+    $totalInvestment += 50;
+}
+
+echo "<h3>Vlastněné BTC: " . round($totalBtc, 8) . " BTC</h3>";
+
+
+$averagePrice = array_sum($bitcoinPrices) / count($bitcoinPrices);
+echo "Průměrná cena Bitcoinu: " . number_format($averagePrice, 2);
 
 
 
@@ -148,5 +162,6 @@ $marketData = [
 ];
 
 // reseni:
+
 
 ?>
